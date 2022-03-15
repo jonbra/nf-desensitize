@@ -1,5 +1,5 @@
 # nf-desensitize
-Developing a nextflow pipeline for removing human reads from SC2 data
+See here: https://gitlab.com/uit-sfb/fhi-desensitize
 
 Run with:
 `sudo nextflow run desensitize.nf --outpath . --samplelist sample_sheet.csv`  
