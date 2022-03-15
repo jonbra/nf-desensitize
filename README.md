@@ -1,4 +1,4 @@
-# desensitize-nf-dev
+# nf-desensitize
 Developing a nextflow pipeline for removing human reads from SC2 data
 
 Run with:
