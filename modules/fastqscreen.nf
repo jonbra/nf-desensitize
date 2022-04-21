@@ -8,7 +8,7 @@ process pe_Fastqscreen {
   tuple val(sampleName), path ("${read1.getSimpleName()}.tagged_filter.fastq.gz"), path ("${read2.getSimpleName()}.tagged_filter.fastq.gz"), emit: pe_Fastqscreen_reads
   path "*.{txt,html}", emit: pe_Fastqscreen_out
 
-  publishDir "${params.outdir}/fastqscreen", mode: 'link', pattern: '*.{tagged_filter.fastq.gz,txt,html}'
+  publishDir "${params.outdir}/fastqscreen", mode: 'copy', pattern: '*.{txt,html}'
 
   shell:
   '''
