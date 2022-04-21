@@ -3,3 +3,4 @@ results/*
 .nextflow*
 util/hg38*
 .Rhistory
+pipeline_info.txt
