@@ -1,3 +1,2 @@
 sample,fastq_1,fastq_2
 Test01,data/raw_files/Test01_R1_001.fastq.gz,data/raw_files/Test01_R2_001.fastq.gz
-Test02,data/raw_files/Test02_R1_001.fastq.gz,data/raw_files/Test02_R2_001.fastq.gz
