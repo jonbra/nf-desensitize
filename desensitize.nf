@@ -7,8 +7,8 @@ nf_mod_path = "$baseDir/modules"
 
 // **********************************************************************************
 
-human_genome = "$baseDir/util/hg38.fa"
-fastq_screen_conf = "$baseDir/util/fastq_screen.conf"
+//human_genome = "$baseDir/util/hg38.fa"
+//fastq_screen_conf = "$baseDir/util/fastq_screen.conf"
 
 params.outdir = params.outpath + "/results/"
 
@@ -21,7 +21,6 @@ pipeline_tool_file.write '\n' +
                          '\n' +
                          'RunFolder:\t' + params.outpath + '\n' +
                          'SampleSheet:\t' + params.samplelist + '\n' +
-                         'fastq_screen reference:\t' + human_genome + '\n' +
                          '\n'
 
 
@@ -30,7 +29,6 @@ log.info """\
          ===================================
          nf_mod_path: ${nf_mod_path}
          outpath: ${params.outpath}
-         genome_reference: ${human_genome}
          """
          .stripIndent()
 
@@ -58,7 +56,7 @@ workflow {
 
     //pe_First_Fastqc(reads)
     //pe_Reformat(reads)
-    pe_Fastqscreen(reads, fastq_screen_conf)
+    pe_Fastqscreen(reads)
     pe_Repair(pe_Fastqscreen.out.pe_Fastqscreen_reads)
     //pe_Second_Fastqc(pe_Repair.out.repair_reads)
 
