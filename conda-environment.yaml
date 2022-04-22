@@ -1,0 +1,11 @@
+name: desensitize
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bbmap=38.86=h1296035_0
+  - bowtie2=2.4.1=py38h1c8e9b9_3
+  - fastq-screen=0.14.0=pl526_0
+  - openjdk=10.0.2
+  - nextflow=21.10.6
