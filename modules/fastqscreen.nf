@@ -2,7 +2,6 @@ process pe_Fastqscreen {
 
   input:
   tuple val(sampleName), path(read1), path(read2)
-  path(fastq_screen_conf)
 
   output:
   tuple val(sampleName), path ("${read1.getSimpleName()}.tagged_filter.fastq.gz"), path ("${read2.getSimpleName()}.tagged_filter.fastq.gz"), emit: pe_Fastqscreen_reads
@@ -15,6 +14,6 @@ process pe_Fastqscreen {
   fastq_screen --aligner bowtie2 \
     --nohits !{read1} !{read2} \
     --threads !{params.cpu} \
-    --conf !{fastq_screen_conf}
+    --conf /resources/fastq_screen.conf
   '''
 }
