@@ -1,7 +1,0 @@
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.1.bt2
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.2.bt2
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.3.bt2
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.4.bt2
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.rev.1.bt2
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.rev.2.bt2
-https://galaxy-ntnu.bioinfo.no/reference_data/hg38/bowtie2_index/hg38/hg38.fa
