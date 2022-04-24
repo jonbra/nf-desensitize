@@ -5,11 +5,6 @@ pipeline_version = "v1"
 
 nf_mod_path = "$baseDir/modules"
 
-// **********************************************************************************
-
-//human_genome = "$baseDir/util/hg38.fa"
-//fastq_screen_conf = "$baseDir/util/fastq_screen.conf"
-
 params.outdir = params.outpath + "/results/"
 
 // **********************************************************************************
@@ -32,13 +27,9 @@ log.info """\
          """
          .stripIndent()
 
-// Include modules for each tool
-//include { pe_First_Fastqc } from "$nf_mod_path/fastqc.nf"
-//include { pe_Reformat } from "$nf_mod_path/reformat.nf"
+
 include { pe_Fastqscreen } from "$nf_mod_path/fastqscreen.nf"
 include { pe_Repair } from "$nf_mod_path/repair.nf"
-//include { pe_First_Fastqc as pe_Second_Fastqc } from "$nf_mod_path/fastqc.nf"
-//include { Multiqc } from "$nf_mod_path/multiqc.nf"
 
 workflow {
     main:
