@@ -54,18 +54,6 @@ workflow {
                 .map{ row -> tuple(row.sample, file(row.fastq_1), file(row.fastq_2)) }
     }
 
-    //pe_First_Fastqc(reads)
-    //pe_Reformat(reads)
     pe_Fastqscreen(reads)
     pe_Repair(pe_Fastqscreen.out.pe_Fastqscreen_reads)
-    //pe_Second_Fastqc(pe_Repair.out.repair_reads)
-
-    // MultiQC -- Needs input from all FastQC and fastp reports
-    /*FILES_FOR_MULTIQC = pe_First_Fastqc.out.FASTQC_out.collect { it[1] }.mix(
-        pe_Fastqscreen.out.pe_Fastqscreen_out.collect { it[1] }.mix(
-            pe_Second_Fastqc.out.FASTQC_out.collect { it[1] }
-        )
-    ).collect()
-    Multiqc(FILES_FOR_MULTIQC)
-    */
 }
