@@ -5,28 +5,9 @@ pipeline_version = "v1"
 
 nf_mod_path = "$baseDir/modules"
 
-params.outdir = params.outpath + "/results/"
+params.outdir = params.outpath + "/desensitized/"
 
 // **********************************************************************************
-
-
-File pipeline_tool_file = new File("$params.outpath/pipeline_info.txt")
-pipeline_tool_file.write '\n' +
-                         'Pipeline:\t' + pipeline_version + '\n' +
-                         '\n' +
-                         'RunFolder:\t' + params.outpath + '\n' +
-                         'SampleSheet:\t' + params.samplelist + '\n' +
-                         '\n'
-
-
-log.info """\
-         D E S E N S I T I Z E - N F   P I P E L I N E
-         ===================================
-         nf_mod_path: ${nf_mod_path}
-         outpath: ${params.outpath}
-         """
-         .stripIndent()
-
 
 include { pe_Fastqscreen } from "$nf_mod_path/fastqscreen.nf"
 include { pe_Repair } from "$nf_mod_path/repair.nf"
