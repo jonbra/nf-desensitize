@@ -9,3 +9,4 @@ dependencies:
   - fastq-screen=0.14.0=pl526_0
   - openjdk=10.0.2
   - nextflow=21.10.6
+  - tbb=2020.2=hc9558a2_0
