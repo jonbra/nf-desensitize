@@ -5,7 +5,7 @@ process pe_Fastqscreen {
 
   output:
   tuple val(sampleName), path ("${read1.getSimpleName()}.tagged_filter.fastq.gz"), path ("${read2.getSimpleName()}.tagged_filter.fastq.gz"), emit: pe_Fastqscreen_reads
-  path "*.{txt,html}", emit: pe_Fastqscreen_out
+  path "*.{txt,html}"
   path "*.{sh,out}"
 
   publishDir "${params.outdir}/fastqscreen", mode: 'copy', pattern: '*.{txt,html,tagged_filter.fastq.gz}'
@@ -15,7 +15,6 @@ process pe_Fastqscreen {
   """
   fastq_screen --aligner bowtie2 \
     --nohits ${read1} ${read2} \
-    --threads ${params.cpu} \
     --conf /resources/fastq_screen.conf
 
   cp .command.sh ${sampleName}.fastqscreen.sh
