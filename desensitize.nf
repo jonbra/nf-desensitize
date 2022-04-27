@@ -1,6 +1,5 @@
 nextflow.enable.dsl=2
 
-params.cpu=4
 pipeline_version = "v1"
 
 nf_mod_path = "$baseDir/modules"
