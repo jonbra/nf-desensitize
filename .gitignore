@@ -4,3 +4,4 @@ results/*
 util/hg38*
 .Rhistory
 pipeline_info.txt
+nf-desensitize.code-workspace
