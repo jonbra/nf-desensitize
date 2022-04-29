@@ -6,7 +6,7 @@ FROM continuumio/miniconda3
 WORKDIR /resources
 COPY fastq_screen.conf .
 COPY references.txt .
-RUN wget -i references.txt
+#RUN wget -i references.txt
 # NOTE: /workflow will be mounted and "overwritten" by NF on runtime
 
 ENV HOME /workflow
