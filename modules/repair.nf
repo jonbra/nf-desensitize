@@ -4,7 +4,7 @@ process pe_Repair {
   tuple val(sampleName), path(read1), path(read2)
 
   output:
-  tuple val(sampleName), path ("${sampleName}_R1.desensitized.fastq.gz"), path ("${sampleName}_R2.desensitized.fastq.gz")
+  tuple val(sampleName), path ("${sampleName}_R1_001.desensitized.fastq.gz"), path ("${sampleName}_R2_001.desensitized.fastq.gz")
   path "*.{sh,out}"
 
   publishDir "${params.outdir}/repair_filtered", mode: 'copy', pattern: '*.{gz}'
