@@ -15,7 +15,7 @@ process pe_Fastqscreen {
   """
   fastq_screen --aligner bowtie2 \
     --nohits ${read1} ${read2} \
-    --threads ${params.cpu} \
+    --threads ${params.threads} \
     --conf /resources/fastq_screen.conf
 
   cp .command.sh ${sampleName}.fastqscreen.sh

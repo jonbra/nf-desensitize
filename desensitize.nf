@@ -4,7 +4,7 @@ pipeline_version = "v1"
 
 nf_mod_path = "$baseDir/modules"
 
-params.cpu=4
+params.threads=4
 
 params.outdir = params.outpath + "/desensitized/"
 
